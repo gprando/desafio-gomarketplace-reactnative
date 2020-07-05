@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import { FlatList } from 'react-native';
+import { lighten } from 'polished';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
@@ -23,13 +24,14 @@ export const Product = styled.View`
   padding: 15px 10px;
   border-radius: 5px;
   margin: 5px;
-  flex: 1;
   flex-direction: row;
+  border-width: 1px;
+  border-color: ${lighten(0.4, '#c53030')};
 `;
 
 export const ProductImage = styled.Image`
-  height: 92px;
-  width: 92px;
+  height: 120px;
+  width: 110px;
 `;
 
 export const ProductTitleContainer = styled.View`

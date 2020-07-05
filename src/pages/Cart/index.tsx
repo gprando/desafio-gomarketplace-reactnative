@@ -36,7 +36,11 @@ interface Product {
 }
 
 const Cart: React.FC = () => {
-  const { increment, decrement, products } = useCart();
+  const { increment, decrement, products, removeToCart } = useCart();
+
+  function handleRemove(id: string): void {
+    removeToCart(id);
+  }
 
   function handleIncrement(id: string): void {
     increment(id);
@@ -96,6 +100,12 @@ const Cart: React.FC = () => {
                 </ProductPriceContainer>
               </ProductTitleContainer>
               <ActionContainer>
+                <ActionButton
+                  testID={`increment-${item.id}`}
+                  onPress={() => handleRemove(item.id)}
+                >
+                  <FeatherIcon name="trash" color="#E83F5B" size={16} />
+                </ActionButton>
                 <ActionButton
                   testID={`increment-${item.id}`}
                   onPress={() => handleIncrement(item.id)}

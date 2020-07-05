@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import { FlatList } from 'react-native';
+import { lighten } from 'polished';
 
 interface Product {
   id: string;
@@ -35,6 +36,8 @@ export const Product = styled.View`
   border-radius: 5px;
   margin: 8px;
   flex: 1;
+  border-width: 1px;
+  border-color: ${lighten(0.4, '#c53030')};
 `;
 
 export const ProductImage = styled.Image`
